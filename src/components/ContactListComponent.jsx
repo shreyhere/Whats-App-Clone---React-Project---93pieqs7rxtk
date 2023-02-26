@@ -114,9 +114,9 @@ const ContactComponent = (props) => {
 
       <ContactInfo>
         <ContactName>{userData.name}</ContactName>
-        <MessageText>{userData?.lastText}</MessageText>
+        {/* <MessageText>{userData?.lastText}</MessageText> */}
       </ContactInfo>
-      <MessageTime>{userData?.lastTextTime}</MessageTime>
+      {/* <MessageTime>{userData?.lastTextTime}</MessageTime> */}
     </ContactItem>
   );
 };
@@ -157,11 +157,9 @@ const ContactListComponent = (props) => {
           />
         </SearchContainer>
       </SearchBox>
-      {contactList.map((userData) => (
-        <ContactComponent userData={userData} setChat={props.setChat} />
-      ))}
+
       {filteredContacts.map((userData) => (
-        <ContactComponent userData={userData} />
+        <ContactComponent userData={userData} setChat={props.setChat} />
       ))}
     </Container>
   );
